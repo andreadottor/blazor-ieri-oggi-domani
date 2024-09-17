@@ -2,15 +2,15 @@
 @inject IUsersService UserService
 
 <DynamicForm Title="Create User"
-             Item="Input" TItem="User"
+             Item="Input" TItem="UserViewModel"
              OnSave="OnSaveUser"
              OnUndo="OnUndo"/>
 
 
 @code {
-    private User Input { get; set; } = new();
+    private UserViewModel Input { get; set; } = new();
 
-    private async Task OnSaveUser(User model)
+    private async Task OnSaveUser(UserViewModel model)
     {
         await UserService.UserInsertAsync(model);
     }

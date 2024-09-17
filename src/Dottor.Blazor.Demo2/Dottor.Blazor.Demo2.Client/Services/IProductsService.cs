@@ -1,8 +1,8 @@
 ﻿namespace Dottor.Blazor.Demo2.Client.Services;
 
-using Dottor.Blazor.Demo2.Client.Models;
+using Dottor.Blazor.Demo2.Client.ViewModels;
 
 public interface IProductsService
 {
-    Task ProductInsertAsync(Product product);
+    Task ProductInsertAsync(ProductViewModel product);
 }

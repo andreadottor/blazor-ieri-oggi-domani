@@ -1,24 +1,28 @@
-﻿namespace Dottor.Blazor.Demo2.Client.Models;
+﻿namespace Dottor.Blazor.Demo2.Client.ViewModels;
 
+using Dottor.Blazor.Demo2.Client.Attributes;
 using FluentValidation;
 using System.ComponentModel;
 
-public class Product
+public class ProductViewModel
 {
+    [FieldIndex(2)]
     [DisplayName("Nome")]
     public string Name { get; set; } = default!;
 
+    [FieldIndex(1)]
     [DisplayName("Codice")]
     public string Code { get; set; } = default!;
 
+    [FieldIndex(3)]
     [DisplayName("Prezzo")]
     public decimal Price { get; set; } = 0;
 }
 
 
-public class ProductValidator : AbstractValidator<Product>
+public class ProductViewModelValidator : AbstractValidator<ProductViewModel>
 {
-    public ProductValidator()
+    public ProductViewModelValidator()
     {
         RuleFor(x => x.Name).NotEmpty().WithMessage("Nome obbligatorio");
         RuleFor(x => x.Code).NotEmpty().WithMessage("Codice obbligatorio");

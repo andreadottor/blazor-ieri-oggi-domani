@@ -2,14 +2,14 @@
 @inject IProductsService ProductsService
 
 <DynamicForm Title="Create Product"
-             Item="Input" TItem="Product"
+             Item="Input" TItem="ProductViewModel"
              OnSave="OnSaveProduct"
              OnUndo="OnUndo" />
 
 @code {
-    public Product Input { get; set; } = new();
+    public ProductViewModel Input { get; set; } = new();
 
-    private async Task OnSaveProduct(Product model)
+    private async Task OnSaveProduct(ProductViewModel model)
     {
         await ProductsService.ProductInsertAsync(model);
     }

@@ -1,9 +1,9 @@
-﻿namespace Dottor.Blazor.Demo2.Client.Models;
+﻿namespace Dottor.Blazor.Demo2.Client.ViewModels;
 
 using FluentValidation;
 using System.ComponentModel;
 
-public class User
+public class UserViewModel
 {
     [DisplayName("Nome")]
     public string FirstName { get; set; } = default!;
@@ -13,9 +13,9 @@ public class User
     public string Email { get; set; } = default!;
 }
 
-public class UserValidator : AbstractValidator<User>
+public class UserViewModelValidator : AbstractValidator<UserViewModel>
 {
-    public UserValidator()
+    public UserViewModelValidator()
     {
         RuleFor(x => x.FirstName).NotEmpty().WithMessage("Nome obbligatorio");
         RuleFor(x => x.LastName).NotEmpty().WithMessage("Cognome obbligatorio");

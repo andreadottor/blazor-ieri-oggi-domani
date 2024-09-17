@@ -1,0 +1,12 @@
+﻿@inherits InputText
+
+<div class="form-group">
+    <label for="@FieldIdentifier.FieldName">@Label</label>
+    <input @attributes="@AdditionalAttributes" 
+           class="form-control @CssClass" 
+           value="@CurrentValueAsString"
+           @onchange="EventCallback.Factory.CreateBinder<string?>(this, __value => CurrentValueAsString = __value, CurrentValueAsString)"
+           name="@NameAttributeValue"
+           id="@NameAttributeValue" />
+    <ValidationMessage For="ValueExpression" />
+</div>

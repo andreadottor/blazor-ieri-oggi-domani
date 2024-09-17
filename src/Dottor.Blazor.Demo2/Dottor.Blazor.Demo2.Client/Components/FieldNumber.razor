@@ -1,0 +1,14 @@
+﻿@typeparam TItem
+@inherits InputNumber<TItem>
+
+<div class="form-group">
+    <label for="@NameAttributeValue">@Label</label>
+    <input @attributes="@AdditionalAttributes" 
+           class="form-control @CssClass"
+           value="@CurrentValueAsString"
+           @onchange="EventCallback.Factory.CreateBinder<string?>(this, __value => CurrentValueAsString = __value, CurrentValueAsString)"
+           type="number" 
+           name="@NameAttributeValue"
+           id="@NameAttributeValue" />
+    <ValidationMessage For="ValueExpression" />
+</div>

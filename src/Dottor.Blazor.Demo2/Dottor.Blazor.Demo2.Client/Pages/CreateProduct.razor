@@ -1,0 +1,21 @@
+﻿@page "/create-product"
+@inject IProductsService ProductsService
+
+<DynamicForm Title="Create Product"
+             Item="Input" TItem="Product"
+             OnSave="OnSaveProduct"
+             OnUndo="OnUndo" />
+
+@code {
+    public Product Input { get; set; } = new();
+
+    private async Task OnSaveProduct(Product model)
+    {
+        await ProductsService.ProductInsertAsync(model);
+    }
+
+    private void OnUndo()
+    {
+        Input = new();
+    }
+}

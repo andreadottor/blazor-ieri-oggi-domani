@@ -1,0 +1,22 @@
+﻿@page "/create-user"
+@inject IUsersService UserService
+
+<DynamicForm Title="Create User"
+             Item="Input" TItem="User"
+             OnSave="OnSaveUser"
+             OnUndo="OnUndo"/>
+
+
+@code {
+    private User Input { get; set; } = new();
+
+    private async Task OnSaveUser(User model)
+    {
+        await UserService.UserInsertAsync(model);
+    }
+
+    private void OnUndo()
+    {
+        Input = new();
+    }
+}

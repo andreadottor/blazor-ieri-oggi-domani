@@ -1,0 +1,43 @@
+﻿@typeparam TItem
+
+<h3>@Title</h3>
+
+<EditForm Model="Item" OnValidSubmit="OnSaveAsync">
+    <FluentValidationValidator />
+
+    @foreach (var p in GetProperties())
+    {
+        if (p.PropertyType == typeof(int))
+        {
+            <FieldNumber TItem="int"
+                         Label="@GetLabel(p)"
+                         Value="@(GetPropertyValue<int>(p))"
+                         ValueExpression="ValueExpression<int>(p)"
+                         ValueChanged="EventCallback.Factory.Create<int>(this, __value =>  p.SetValue(Item, __value))" />
+        }
+        if (p.PropertyType == typeof(decimal))
+        {
+            <FieldNumber TItem="decimal"
+                         Label="@GetLabel(p)"
+                         Value="@(GetPropertyValue<decimal>(p))"
+                         ValueExpression="ValueExpression<decimal>(p)"
+                         ValueChanged="EventCallback.Factory.Create<decimal>(this, __value =>  p.SetValue(Item, __value))" />
+        }
+        else if (p.PropertyType == typeof(string))
+        {
+            <FieldText Label="@GetLabel(p)"
+                       Value="@(GetPropertyValue<string>(p))"
+                       ValueExpression="ValueExpression<string>(p)"
+                       ValueChanged="EventCallback.Factory.Create<string?>(this, __value =>  p.SetValue(Item, __value))" />
+        }
+        else
+        {
+            <p class="text-danger">Unsupported type: @p.PropertyType</p>
+        }
+    }
+
+    <hr />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-secondary ms-2" @onclick="OnCancelAsync">Cancel</button>
+
+</EditForm>

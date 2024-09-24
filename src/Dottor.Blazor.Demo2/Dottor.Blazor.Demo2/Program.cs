@@ -1,5 +1,6 @@
 using Dottor.Blazor.Demo2.Client.Services;
 using Dottor.Blazor.Demo2.Components;
+using Dottor.Blazor.Demo2.Endpoints;
 using Dottor.Blazor.Demo2.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +31,9 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+app.MapUsersEndpoints();
+app.MapProductsEndpoints();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()

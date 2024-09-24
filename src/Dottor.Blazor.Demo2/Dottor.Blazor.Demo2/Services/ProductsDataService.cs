@@ -5,8 +5,16 @@ using Dottor.Blazor.Demo2.Client.ViewModels;
 
 public class ProductsDataService : IProductsService
 {
-    public Task ProductInsertAsync(ProductViewModel product)
+	private readonly ILogger<ProductsDataService> _logger;
+
+	public ProductsDataService(ILogger<ProductsDataService> logger)
+	{
+		_logger = logger;
+	}
+	public Task ProductInsertAsync(ProductViewModel product)
     {
-        return Task.CompletedTask;
+		_logger.LogInformation("New product created!");
+
+		return Task.CompletedTask;
     }
 }

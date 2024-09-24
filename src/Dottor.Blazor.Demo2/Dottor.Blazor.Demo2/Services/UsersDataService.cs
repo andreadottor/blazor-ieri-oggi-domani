@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 public class UsersDataService : IUsersService
 {
-    public Task UserInsertAsync(UserViewModel user)
+    private readonly ILogger<UsersDataService> _logger;
+
+	public UsersDataService(ILogger<UsersDataService> logger)
+	{
+		_logger = logger;
+	}
+
+	public Task UserInsertAsync(UserViewModel user)
     {
-        return Task.CompletedTask;
+		_logger.LogInformation("New user created!");
+
+		return Task.CompletedTask;
     }
 }

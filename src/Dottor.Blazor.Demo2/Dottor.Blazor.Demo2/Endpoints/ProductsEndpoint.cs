@@ -3,6 +3,8 @@
 using Dottor.Blazor.Demo2.Client.Services;
 using Dottor.Blazor.Demo2.Client.ViewModels;
 using Microsoft.AspNetCore.Http.HttpResults;
+using System;
+using FluentValidation;
 
 public static class ProductsEndpoint
 {
@@ -18,12 +20,21 @@ public static class ProductsEndpoint
 		return endpoints;
 	}
 
-	private static async Task<Results<Created, ProblemHttpResult>> InsertProductAsync(
+	private static async Task<Results<Created, ProblemHttpResult, ValidationProblem>> InsertProductAsync(
 		ProductViewModel product,
 		ILoggerFactory loggerFactory,
-		IProductsService productService)
+		IProductsService productService,
+		IValidator<ProductViewModel> validator)
 	{
 		var logger = loggerFactory.CreateLogger(typeof(ProductsEndpoint).FullName!);
+
+		// validate model with FluentValidation
+		//
+		var validationResult = await validator.ValidateAsync(product);
+
+		if (!validationResult.IsValid)
+			return TypedResults.ValidationProblem(validationResult.ToDictionary());
+
 		try
 		{
 			await productService.ProductInsertAsync(product);

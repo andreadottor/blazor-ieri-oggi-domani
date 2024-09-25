@@ -20,7 +20,7 @@ public class ProductViewModel
 }
 
 
-public class ProductViewModelValidator : AbstractValidator<ProductViewModel>
+public sealed class ProductViewModelValidator : AbstractValidator<ProductViewModel>
 {
     public ProductViewModelValidator()
     {

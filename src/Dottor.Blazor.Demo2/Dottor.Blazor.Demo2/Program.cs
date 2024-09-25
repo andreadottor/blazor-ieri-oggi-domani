@@ -1,7 +1,10 @@
 using Dottor.Blazor.Demo2.Client.Services;
+using Dottor.Blazor.Demo2.Client.ViewModels;
 using Dottor.Blazor.Demo2.Components;
 using Dottor.Blazor.Demo2.Endpoints;
 using Dottor.Blazor.Demo2.Services;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,11 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddScoped<IProductsService, ProductsDataService>();
 builder.Services.AddScoped<IUsersService, UsersDataService>();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssemblyContaining<UserViewModelValidator>();
+
 
 var app = builder.Build();
 

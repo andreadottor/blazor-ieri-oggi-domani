@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dottor.Blazor.Demo2.Client\Dottor.Blazor.Demo2.Client.csproj" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.8" />
     <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>

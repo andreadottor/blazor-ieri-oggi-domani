@@ -13,7 +13,7 @@ public class UserViewModel
     public string Email { get; set; } = default!;
 }
 
-public class UserViewModelValidator : AbstractValidator<UserViewModel>
+public sealed class UserViewModelValidator : AbstractValidator<UserViewModel>
 {
     public UserViewModelValidator()
     {

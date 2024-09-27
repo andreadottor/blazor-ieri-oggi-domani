@@ -11,7 +11,9 @@
         </div>
 
         <article class="content px-4">
-            @Body
+            <ErrorBoundary @ref="_errorBoundary">
+                @Body
+            </ErrorBoundary>
         </article>
     </main>
 </div>
@@ -21,3 +23,13 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+
+
+@code {
+    private ErrorBoundary? _errorBoundary;
+
+    protected override void OnParametersSet()
+    {
+        _errorBoundary?.Recover();
+    }
+}

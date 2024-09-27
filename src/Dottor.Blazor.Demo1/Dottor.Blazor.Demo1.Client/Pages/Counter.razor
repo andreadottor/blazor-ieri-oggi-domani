@@ -15,5 +15,10 @@
     private void IncrementCount()
     {
         currentCount++;
+        
+        if (currentCount == 10)
+        {
+            throw new InvalidOperationException("Counter is at max value");
+        }
     }
 }

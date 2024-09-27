@@ -1,4 +1,6 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject NavigationManager Nav
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Dottor.Blazor.Demo1</a>
     </div>
@@ -9,22 +11,28 @@
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLinkPreventDefault class="nav-link" href="" Match="NavLinkMatch.All" @onclick="@(() => NavigateTo(""))">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
+            </NavLinkPreventDefault>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
+            <NavLinkPreventDefault class="nav-link" href="counter" @onclick="@(() => NavigateTo("counter"))">
                 <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
+            </NavLinkPreventDefault>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
+            <NavLinkPreventDefault class="nav-link" href="weather" @onclick="@(() => NavigateTo("weather"))">
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
+            </NavLinkPreventDefault>
         </div>
     </nav>
 </div>
 
+@code {
+    private void NavigateTo(string uri)
+    {
+        Nav.NavigateTo(uri, true);
+    }
+}

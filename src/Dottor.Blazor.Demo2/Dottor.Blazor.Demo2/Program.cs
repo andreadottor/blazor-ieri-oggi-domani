@@ -2,6 +2,7 @@ using Dottor.Blazor.Demo2.Client.Services;
 using Dottor.Blazor.Demo2.Client.ViewModels;
 using Dottor.Blazor.Demo2.Components;
 using Dottor.Blazor.Demo2.Endpoints;
+using Dottor.Blazor.Demo2.Models.Validators;
 using Dottor.Blazor.Demo2.Services;
 using FluentValidation;
 using FluentValidation.AspNetCore;

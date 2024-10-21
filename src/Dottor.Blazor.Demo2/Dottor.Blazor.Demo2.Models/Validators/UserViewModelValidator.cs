@@ -1,17 +1,7 @@
-﻿namespace Dottor.Blazor.Demo2.Client.ViewModels;
+﻿namespace Dottor.Blazor.Demo2.Models.Validators;
 
+using Dottor.Blazor.Demo2.Client.ViewModels;
 using FluentValidation;
-using System.ComponentModel;
-
-public class UserViewModel
-{
-    [DisplayName("Nome")]
-    public string FirstName { get; set; } = default!;
-    [DisplayName("Cognome")]
-    public string LastName { get; set; } = default!;
-    [DisplayName("Email")]
-    public string Email { get; set; } = default!;
-}
 
 public sealed class UserViewModelValidator : AbstractValidator<UserViewModel>
 {

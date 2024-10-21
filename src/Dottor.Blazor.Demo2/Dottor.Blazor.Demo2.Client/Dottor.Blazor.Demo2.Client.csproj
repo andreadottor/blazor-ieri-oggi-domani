@@ -15,4 +15,12 @@
     <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dottor.Blazor.Demo2.Models\Dottor.Blazor.Demo2.Models.csproj" />
+  </ItemGroup>
+
 </Project>

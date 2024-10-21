@@ -2,7 +2,7 @@
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">Dottor.Blazor.Demo1</a>
+        <a class="navbar-brand" href="">Demo 1</a>
     </div>
 </div>
 
@@ -11,9 +11,9 @@
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">
         <div class="nav-item px-3">
-            <NavLinkPreventDefault class="nav-link" href="" Match="NavLinkMatch.All" @onclick="@(() => NavigateTo(""))">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLinkPreventDefault>
+            </NavLink>
         </div>
 
         <div class="nav-item px-3">

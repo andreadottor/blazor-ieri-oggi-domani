@@ -1,6 +1,6 @@
 ﻿namespace Dottor.Blazor.Demo2.Client.Components;
 
-using Dottor.Blazor.Demo2.Client.Attributes;
+using Dottor.Blazor.Demo2.Models.Attributes;
 using Microsoft.AspNetCore.Components;
 using System.ComponentModel;
 using System.Linq.Expressions;

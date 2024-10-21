@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dottor.Blazor.Demo2", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dottor.Blazor.Demo2.Client", "src\Dottor.Blazor.Demo2\Dottor.Blazor.Demo2.Client\Dottor.Blazor.Demo2.Client.csproj", "{77F2BC8E-6EE2-4D54-809D-AF50B25CC835}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dottor.Blazor.Demo2.Models", "src\Dottor.Blazor.Demo2\Dottor.Blazor.Demo2.Models\Dottor.Blazor.Demo2.Models.csproj", "{C72BEC3C-90CE-424A-9FC5-2949D048BC6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{77F2BC8E-6EE2-4D54-809D-AF50B25CC835}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77F2BC8E-6EE2-4D54-809D-AF50B25CC835}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77F2BC8E-6EE2-4D54-809D-AF50B25CC835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72BEC3C-90CE-424A-9FC5-2949D048BC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72BEC3C-90CE-424A-9FC5-2949D048BC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72BEC3C-90CE-424A-9FC5-2949D048BC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72BEC3C-90CE-424A-9FC5-2949D048BC6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{EA01B161-D34B-435A-8E89-C68D11B9242F} = {7E304608-23C0-4451-A2E4-E29659A9503B}
 		{E9546B84-BE47-4079-8DBC-67EA46EA42B7} = {81A6F279-194B-4BA6-B1C1-335C0124F029}
 		{77F2BC8E-6EE2-4D54-809D-AF50B25CC835} = {81A6F279-194B-4BA6-B1C1-335C0124F029}
+		{C72BEC3C-90CE-424A-9FC5-2949D048BC6D} = {81A6F279-194B-4BA6-B1C1-335C0124F029}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0711D12B-F46E-4F16-BDC9-9418ED30FB89}

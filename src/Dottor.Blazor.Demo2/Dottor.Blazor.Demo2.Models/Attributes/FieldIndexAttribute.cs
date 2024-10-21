@@ -1,4 +1,4 @@
-﻿namespace Dottor.Blazor.Demo2.Client.Attributes;
+﻿namespace Dottor.Blazor.Demo2.Models.Attributes;
 
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
 public class FieldIndexAttribute : Attribute

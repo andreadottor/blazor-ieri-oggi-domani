@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Dottor.Blazor.Demo2.Models\Dottor.Blazor.Demo2.Models.csproj" />
   </ItemGroup>
 
